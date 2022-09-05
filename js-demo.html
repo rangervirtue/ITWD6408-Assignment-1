@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<!------------------------------HEAD------------------------------------------------>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 1: JS Demo</title>
+	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+<!----------------------------------------------------------------------------------->
+<!-------------------------------BODY------------------------------------------------>
+<body>
+	<header>
+		<!--Use Flexbox to create the navigation bar-->
+		<div class="flexbox-container">
+			<div class="box-1">
+				<img src="MEDIA/global.png" alt="Logo"/>		
+			</div>	
+				
+			<div class="box-2">
+				<p class="tagline">ITWD6.408</p>
+			</div>
+			
+			<div class="box-3">
+				<div class="horizontal-nav">
+					<ul>
+						<li><a href="index.html">HOME</a></li>
+						<li><a href="forms.html">FORMS</a></li>
+						<li><a href="xml-json.html">XML/JSON</a></li>
+						<li class="active"><a href="js-demo.html">JAVASCRIPT</a></li>
+						<li><a href="my-research.html">RESEARCH</a></li>	
+					</ul>
+				</div>			
+			</div>			
+			<div class="box-4">
+				<p onclick="openNav()">≡</p>
+			</div>				
+		</div>	
+
+		<!--Curtain menu: collapse this menu as default when loading the page-->
+		<nav id="curtain-nav">
+			<!--Add a close button (X) hyperlink on the top left corner-->
+			<a href="javascript:void(0)" class="nav-close-button" onclick="closeNav()">❌</a>
+			<div class="curtain-nav-content">
+				<ul>
+					<li class="active"><a href="index.html">HOME</a></li>
+					<li><a href="forms.html">FORMS</a></li>
+					<li><a href="xml-json.html">XML/JSON</a></li>
+					<li><a href="js-demo.html">JAVASCRIPT</a></li>
+					<li><a href="my-research.html">RESEARCH</a></li>	
+				</ul>
+			</div>
+		</nav>
+	</header>
+<!----------------------------------------------------------------------------------->
+<!-------------------------------MAIN CONTENT SECTION-------------------------------->
+	<div class="container-fluid">
+		<div class="row">
+			<!--Button section-->
+			<div class="col-12 col-md-2">
+				<div class="container-fluid">
+					<div class="row justify-content-around">
+						<!--Button 1-->						
+						<button 
+							class="col-6 col-md-12 btn btn-secondary btn-outline-warning" type="button" 
+							data-bs-toggle="collapse" data-bs-target="#button1"
+							aria-pressed="true"
+							aria-expanded="false" aria-controls="button1">DEMO 1
+						</button>
+						<!--Button 2-->
+						<button
+							class="col-6 col-md-12 btn btn-secondary btn-outline-warning" type="button" 
+							data-bs-toggle="collapse" data-bs-target="#button2" 
+							aria-expanded="false" aria-controls="button2">DEMO 2
+						</button>
+						<!--Button 3-->						
+						<button 
+							class="col-6 col-md-12 btn btn-secondary btn-outline-warning" type="button" 
+							data-bs-toggle="collapse" data-bs-target="#button3" 
+							aria-expanded="false" aria-controls="button3">DEMO 3
+						</button>
+						<!--Button 4-->
+						<button
+							class="col-6 col-md-12 btn btn-secondary btn-outline-warning" type="button" 
+							data-bs-toggle="collapse" data-bs-target="#button4" 
+							aria-expanded="false" aria-controls="button4">DEMO 4
+						</button>
+					</div>			
+				</div>			
+			</div>
+			<div class="col-12 col-md-10">
+				<div class="row">
+					<div class="col-12">
+					<!--Content area 1 for button 1-->
+					<div class="collapse show multi-collapse" id="button1">
+						<div class="card card-body">
+							<section class="container">
+								<h2><b>Demo 1: Slideshow</b></h2>
+								<h4>Manual Slideshow: Two buttons</h4>
+								<h5 id="manual-slide-title">The Shawshank Redemption</h5>
+								<img id="manual-slide-image" src="MEDIA/movie0.jpg" height="300px">
+								<br>
+								<button onclick="previousSlide()">PREVIOUS</button>
+								<button onclick="nextSlide()">NEXT</button>
+							</section>
+							<section class="container">
+								<h3>Automatical Slideshow: Running Automatically</h3>
+								<h4 id="auto-slide-title">The Shawshank Redemption</h4>
+								<img id="auto-slide-image" src="MEDIA/movie0.jpg" height="300px">
+							</section>
+						</div>
+					</div>
+						<div class="collapse show multi-collapse" id="button2">
+						<div class="card card-body">
+							<section class="container">
+								<h2>Demo 2:Customize the Webpage</h2>
+									<div id="page_content">
+									<label>Select Text Size: </label>
+									<select id="text-size" onchange="changeTextsize()">	
+										<option></option>
+										<option value="35px">VERY BIG</option>
+										<option value="25px">BIG</option>
+										<option value="16px">NORMAL</option>		
+									</select>
+
+									<br>
+									<label>Select color: </label>
+									<select id="colorOption" onchange="changeBGcolor()">
+										<option></option>
+										<option value="red">RED</option>
+										<option value="green">GREEN</option>
+										<option value="yellow">YELLOW</option>
+										<option value="ivory">IVORY</option>
+										<option value="pink">PINK</option>
+										<option value="purple">PURPLE</option>
+									</select>
+									<br><br>
+									<h2>Lorem Ipsum</h2>
+									<p id="abstract">"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."<br>
+									"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
+									</p>
+									<p id="detailed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse semper magna id nibh finibus, ultrices molestie tellus venenatis. Curabitur gravida, tortor sit amet molestie consectetur, tortor tortor dictum leo, nec imperdiet neque leo id felis.<br>
+									Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec at egestas leo. Maecenas varius malesuada metus, at malesuada massa vulputate et.
+									</p>
+									</div>
+							</section>
+						</div>
+						</div>
+						<div class="collapse show multi-collapse" id="button3">
+						<div class="card card-body">
+							<section class="container">
+								<h2>Demo 3: Select Movie & Add Movie</h2>
+								<label>Select Movie: </label>
+								<select id="my-movieList" onchange="displayMyMovie()"></select>
+								<br>
+								<section class="container">
+									<h4 id="my-movieTitle">The Shawshank Redemption</h4>
+									<p id="my-movieYear">1994</p>
+									<img id="my-movieImageURL" src="MEDIA/movie0.jpg" height="300px">
+								</section>
+								<section class="container">
+									<h2>Add movie to existing list</h2>
+										<label>Title: </label>
+										<input type="text" id="my-movie-title" size="70" placeholder="title">
+										<br>
+										<label>Year: </label>
+										<input type="number" id="my-movie-year" size="70" placeholder="year">
+										<br>
+										<label>Image URL: </label>
+										<input type="text" id="my-movie-image-url" size="70" placeholder="image url">
+										<br>
+										<input type="button" value="Add To List" onclick="AddItemToList()">		
+								</section>
+							</section>
+						</div>
+						</div>
+						<div class="collapse show multi-collapse" id="button4">
+						<div class="card card-body">
+							<section class="container">
+								<h2>EXERCISE 4: ADD A NEW COMMENT</h2>
+								<h4 id="my-movieTitle">The Shawshank Redemption</h4>
+								<p id="my-movieYear">1994</p>
+								<img id="my-movieImageURL" src="MEDIA/movie0.jpg" height="300px">
+								<br>
+								<h4>Comments: </h4>
+								<div id="comment-list"> </div>
+								<h4>Add your comment: </h4>
+								<label for="commentName" class="col-sm-2 col-form-label"><b>Name: </b></label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="commentName" name="commentName" placeholder="Your Name">
+								</div>
+								<br>
+								<label for="commentArea">Comment: </label>
+								<textarea class="form-control" id="commentArea" placeholder="Comment Here" rows="3"></textarea>
+									<br>
+									<button onclick="addComment()">POST</button>
+							</section>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!----------------------------------------------------------------------------------->
+<!--------------------------------------FOOTER--------------------------------------->
+	<footer>
+		<div> @Created by: Phillip Sue <br>
+			Contact me at: <a href="mailto:suep2@student.eit.ac.nz">suep2@student.eit.ac.nz</a>
+		</div>
+	</footer>
+</body>
+	<!--Embed the js file at the bottom of the html file-->
+	<script type="text/javascript" src="JS/javascript.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+</html>

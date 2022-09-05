@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<!------------------------------HEAD------------------------------------------------>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 1: My Research </title>
+	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+<!----------------------------------------------------------------------------------->
+<!-------------------------------Navigation Bar-------------------------------------->
+<body>
+	<header>
+		<!--Use Flexbox to create the navigation bar-->
+		<div class="flexbox-container">
+			<div class="box-1">
+				<img src="MEDIA/global.png" alt="Logo"/>		
+			</div>	
+				
+			<div class="box-2">
+				<p class="tagline">ITWD6.408 </p>
+			</div>
+			
+			<div class="box-3">
+				<div class="horizontal-nav">
+					<ul>
+						<li><a href="index.html">HOME</a></li>
+						<li><a href="forms.html">FORMS</a></li>
+						<li><a href="xml-json.html">XML/JSON</a></li>
+						<li><a href="js-demo.html">JAVASCRIPT</a></li>
+						<li class="active"><a href="my-research.html">RESEARCH</a></li>	
+					</ul>
+				</div>			
+			</div>			
+			<div class="box-4">
+				<p onclick="openNav()">≡</p>
+			</div>				
+		</div>	
+
+		<!--Curtain menu: collapse this menu as default when loading the page-->
+		<nav id="curtain-nav">
+			<!--Add a close button (X) hyperlink on the top left corner-->
+			<a href="javascript:void(0)" class="nav-close-button" onclick="closeNav()">❌</a>
+			<div class="curtain-nav-content">
+				<ul>
+					<li class="active"><a href="index.html">HOME</a></li>
+					<li><a href="forms.html">FORMS</a></li>
+					<li><a href="xml-json.html">XML/JSON</a></li>
+					<li><a href="js-demo.html">JAVASCRIPT</a></li>
+					<li><a href="my-research.html">RESEARCH</a></li>	
+				</ul>
+			</div>
+		</nav>
+	</header>
+<!----------------------------------------------------------------------------------->
+<!------------------------------MAIN CONTENT SECTION--------------------------------->
+	<main>
+		<div class="flex-container-research">
+			<div class="research-CC">
+				<div class="research-flip-box">
+					<div class="research-flip-box-inner">
+						<div class="ccresearch-flip-box-front">
+							<h4>Copyright, Creative Common(CC)Licenses, Fair Use</h4>
+							<img src="MEDIA/research copyright.jpg" class="research-images">
+						</div>
+						<div class="ccresearch-flip-box-back">
+							<p>Original work such as artwork, books, music and film etc may display the © symbol.
+							   This is to show that ownership of that work has been claimed, however it is not required
+							   to display the © symbol.
+							   Creative common licenses have been created to grant anyone from individual creators to organisations
+							   standardized copyright permissions to their creative work. There are many types of licenses however I will
+							   only be going over four as well as fair use.<br>
+							   1. The attribution license: allows others to distribute, remix, adapt and build upon the original work, even commercially.
+							   So long as credit is given for the original creation.<br>
+							   2. The NoDerivs License: Allows others to reuse the work for any purpose, however it cannot be adapted and 
+							   credit must be provided to the original content creator.<br>
+							   3. The NonCommercial License: Allows others to adapt, remix and build upon the original woork non-commercially.
+							   although they must aknowledge the original creator and be non-commercial, they do not have to license their derived work on the same terms.<br>
+							   4. The NonCommercial-NoDerivs license: is the strictest of the 6 main licenses. This license only allows others to download the original work and share
+							   them as long as they give the original creator credit, however the content cannot be modified nor used commercially
+							   If you want to know more about copyright licenses please go to: <a href="https://creativecommons.org/licenses/">About The Licenses.</a>
+							   New Zealand uses "fair Dealing" which permits a party to use copyrighted material,without the owner's permission, for the purposes of research, private study, etc
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="research">
+				<div class="research-flip-box">
+					<div class="research-flip-box-inner">
+						<div class="research-flip-box-front">
+							<h4>Privacy & Web Privacy Policy</h4>
+							<img src="Media/privacy policy.jpg" class="research-images">
+						</div>
+						<div class="research-flip-box-back">
+						<p>A privacy policy is a statement or legal document that discloses some or all the ways a party gathers, uses and manages a customer or clients data.<br>
+						   An example of this are cookies pop-ups for websites stating that they will "use your data" for certain things<br>
+						   e.g. We collect personal information from you, including information about your:
+						   contact information
+						   We collect your personal information in order to:
+						   Get reviews
+						   You have the right to ask for a copy of any personal information we hold about you, and to ask for it to be corrected if you think it is wrong. 
+						   If you’d like to ask for a copy of your information, or to have it corrected, please contact us at suep2@student.eit.ac.nz.
+						   This example privacy policy was created with the <a href="https://www.privacy.org.nz/tools/privacy-statement-generator/">Privacy Statement Generator</a>
+						</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="research">
+				<div class="research-flip-box">
+					<div class="research-flip-box-inner">
+						<div class="research-flip-box-front">
+							<h4>How to improve your website SEO</h4>
+							<img src="Media/SEo image.jpg" class="research-images">
+						</div>
+						<div class="research-flip-box-back">
+						<p>
+						<a href="https://www.mtu.edu/umc/services/websites/seo/">Five Ways to improve your sites ranking (SEO)</a> has tips on improving SEO.<br>
+						<b>1. Keywords/Keyword Phrases:</b> Identify and target a specific phrases or keywords on your website so that users can search those phrases/keywords
+						   to find the webpage.<br>
+						<b>2. Frequently Update Content:</b> Regularly updated content shows a sites relevancy, this means that search engines are also more likely to show your content
+						   if it is updated over old websites that have not been updated.<br>
+						<b>3. Metadata:</b> Is the textual description that a browser may use in your page search return.<br>
+						<b>4. Have a link-worth site:</b> A website that is helpful, unbiased, and content rich is most likely to attract links from other websites thus improving search engine optimization
+						   Using descriptive links can also add value to readers, including those with disabilities or users using screen readers.<br>
+						<b>5. Use alt tags:</b> Always describe videos and images with alt tags (alternative descriptions). These allow search engines to locate your page.
+						</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="research">
+				<div class="research-flip-box">
+					<div class="research-flip-box-inner">
+						<div class="research-flip-box-front">
+							<h4>Factors you should know when choosing web-hosts</h4>
+							<img src="Media/web hosting.jpg" class="research-images">
+						</div>
+						<div class="research-flip-box-back">
+						<p><b>Reliability:</b> Checking a webhosts uptime will allow you to see how reliable the web-host is during peak hours and also holiday time. Services with a good uptime should
+						   be able to keep up with heavy traffic and should not be at risk of going offline. This will ensure that your website is active as much as possible.<br>
+						   <b>Hosting features:</b> Various web-hosts possibly have packages that could possibly add extra features that your businesses' website will need. For example:
+						   if your website is an e-commerce website, you possibly could get an e-commerce sort of package that could include a shopping cart and a payment processor instead
+						   of having to create it from scratch.<br>
+						   <b>Security:</b> Having a web host that is secure means that your website is at a lower risk of being attacked. For example: If your website is one based on e-commerce,
+						   this will mean that your web-hosts server will be holding information from your website. If you use a less secure web-host you may possibly suffer from attacks, or even information theft,
+						   it is important to get a webhost with good security unless you really don't have the money for it.
+						</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="research">
+				<div class="research-flip-box">
+					<div class="research-flip-box-inner">
+						<div class="research-flip-box-front">
+							<h4>Web performance and maintenance</h4>
+							<img src="Media/web performance and maintenace.jpg" class="research-images">
+						</div>
+						<div class="research-flip-box-back">
+						<p><b>5 Tips for reducing load speed</b><br>
+							<b>1. Optimize your images:</b> different file formats have different sizes, if your website is experiencing low load times try changing the file type of some of your images.<br>
+							<<b>2. Don't scale down your images:</b> if you scale down images within the code of a website, the website will try to scale it down as the page is loading, this will increace your
+							load time as there is extra work being down as the page is being loaded.<br>
+							<b>3. Put style sheet references at the top:</b> Placing your stylesheet references to the &lthead&gt of your HTML document help pages load faster because it allows your pages to render the styles
+							progressively instead of right at the end.<br>
+							<b>4. Put script references at the bottom:</b> scripts can be long and complicated functions that could take web browsers much longer to load that stylesheets, this can make website load times feel very long.
+							Put script references at the bottom of the HTML document so the website loads the main parts of the website before it tries to load the functions.<br>
+							<b>5. Use separate javascript and CSS files:</b> IF all the javascript and CSS for your website is within the HTML document, this will make the website load the css and functions every time the website loads.
+							This will make the website feel like it's got a long load time. It is also neater and easier to use external files.<br>
+							<b>5 things to do when maintaining a website</b><br>
+							Make Regular backups of your site, Test Load Speed, Fix dead links and errors, Test Browser Compatibility and check search rankings.
+						</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="research">
+				<div class="research-flip-box">
+					<div class="research-flip-box-inner">
+						<div class="research-flip-box-front">
+							<h4>Web Security</h4>
+							<img src="Media/cyber security.jpg" class="research-images">
+						</div>
+						<div class="research-flip-box-back">
+						<p>
+							<b>5 common cyber attack methods and preventatives:</b><br>
+							<b>1. Password attacks:</b> If your website has some sort of authentication then password attacking could become a problem, a preventative for this type of attack is to have an account lockout
+							e.g. lock the account after 5 failed password attempts.<br>
+							<b>2. DDoS (Denial of Service) attacks:</b> A denial of service attack is aimed at denying anyone but the attacker access to the webpage in order to do some sort of harm to it or even theft. A
+							 preventative of this type of attack is to use a proxy like cloudflare where they are able to withstand DDoS attacks because of their 5 second timer. This prevents the DDoS going to the desired website as they 
+							 begin running as soon as it's started. Cloudflare adds a timer before the website is accessed, this means that the DDoS goes to cloudflare rather than your webserver.<br>
+							 <b>3. Phishing attacks:</b> Phishing attacks are easily missed and easily avoided, however there are those people who miss the clear indicators of the attack and click on a link thinking it's for something else. 
+							 The only way to prevent this is to regularly quiz people on phishing attacks and inform them on certain bits of content that indicate an attack attempt.<br>
+							 <b>4. Ransomware:</b> Ransomware is everywhere on the internet from dodgey applications to malicious emails, ransomware can be used to hold a system "hostage". Preventatives for this type of attack would be 
+								not open suspicious links, download from non reputable sources, make sure backups have been created almost daily if a roll back is needed etc.<br>
+								<b>5: Cross site scripting :</b> Cross site scripting(XSS) occurs when an untrusted source is allowed to inject their own code into a web application and that dynamic code if includes with content delivered to the victims browser.  
+								XSS allows an attacker to steal session cookies, allowing the attacker to pretend to be the user, however if can also be used to spread malware, deface websites and reate havoc on social networks. 
+								Preventatives for this type of attack include; filtering ingress data, encoding egress data, and content security policies<br>
+						</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+<!----------------------------------------------------------------------------------->
+<!--------------------------------------FOOTER--------------------------------------->
+	<footer>
+		<div> @Created by: Phillip Sue <br>
+			Contact me at: <a href="mailto:suep2@student.eit.ac.nz">suep2@student.eit.ac.nz</a>
+		</div>
+	</footer>
+	
+	<!--Embed the js file at the bottom of the html file-->
+	<script type="text/javascript" src="JS/javascript.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
