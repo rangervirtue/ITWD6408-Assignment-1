@@ -1,0 +1,578 @@
+/*-------------------------------------------------*/
+/* MOBILE FIRST APPROACH
+   All the below CSS styles are valid for Mobile (small) devices
+   Link: https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+  
+   CSS Relative Unit
+   Link: https://www.w3schools.com/cssref/css_units.asp
+         https://css-tricks.com/css-font-size/
+         https://developer.mozilla.org/en-US/docs/Web/CSS/font-size
+*/
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #f4f4f4;	
+	font-family: "Times New Roman", Times, serif;
+	font-size: 16px;/*Set the baseline font size for the whole website*/
+}
+
+
+/*Header Area*/
+/*---------------------------------*/
+/*CSS flexbox: 1D Card Layout
+  Link 1: https://codelikethis.com/lessons/responsive-layout/flexbox-layout 
+  Link 2: https://medium.com/@merveyuksek/webpage-layout-examples-with-flexbox-88287f010a08
+*/
+.flexbox-container {
+	/*flexbox container*/
+	display: flex;
+	flex-direction: row;/*display on a row => horizontally*/  
+	
+	background-color: #DAF7A6;
+	min-height: 5vh;
+}
+
+.box-1 {
+	flex: 0; /*wrap the content*/
+}
+	
+.box-1 img {
+	height: 90px;
+	padding:10px;
+}
+
+.box-2 {
+	flex: 1;
+	/*Centering both vertical and horizontal*/
+	display: flex;
+	font-size: 1.5em;
+	justify-content: left;
+	align-items: center;
+}
+  
+.box-3 {
+    flex: 1; /*horizontal nav on desktop*/
+	/*Centering the content both vertical and horizontal*/
+	display: flex;
+	justify-content: center;
+	align-items: center;		
+}
+
+.box-4 {
+    flex: 1;/*Curtain menu*/
+	font-size: 4.0em;
+	color: blue;
+	cursor: pointer;
+	text-align: right;
+	padding-right: 0.5em;
+}
+
+
+/*horizontal nav*/
+.horizontal-nav {
+	display: none; /*Hide on mobile devices*/
+}
+
+nav {
+	padding: 10px 10px 10px 10px;/*10px 10px 10px 10px*/
+	overflow: visible;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: visible;
+}
+
+nav ul li {
+	display: block;
+	font-family: 'Oswald', sans-serif;
+	font-size: 1.2em;
+	text-transform: uppercase;
+}
+
+nav ul li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;	
+}
+
+nav ul li ul li {
+	background: #555; 
+	display: block; 
+	font-size: 1em;
+}
+
+nav ul li ul li a {
+	display: block; 
+	text-align: left;
+
+}
+
+nav ul li.dropdown:hover ul {
+	display: block;
+}
+
+/*Cutain Nav*/
+#curtain-nav {
+	height: 70%;/*100%*/
+	width: 0;/*Hide it as default when loading page*/
+	padding: 0;
+	position: fixed;
+	z-index: 3;
+	top: 0; 
+	right: 0;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0, 0.9);
+	overflow-x: hidden;
+	transition: 0.5s;	
+}
+
+.curtain-nav-content {
+	/*For curtain menu*/
+	position: relative;
+	top: 10%;
+	width: 100%;
+	text-align: center;
+	margin-top: 30px;	
+	overflow: visible;
+}
+
+.nav-close-button {
+	position: absolute;
+	top: 20px;
+	right: 45px;
+	font-size: 2.0em;
+	color: white;
+	text-decoration: none;
+}
+
+/*Set hover effect for items in the menu*/
+.active {
+	background-color: #FF9633;
+}
+
+nav li:hover:not(.active) {
+	background-color: green;
+}
+
+/*Index Main Area*/
+main {
+    min-height: 85vh;
+    background-color: gray;
+    display: grid;
+    grid-template-areas: "area-1"
+						 "area-2"
+						 "area-3"
+						 "area-4"
+						 "area-5"
+	;
+}
+
+/*Showcase Section*/
+.showcase {
+    grid-area: area-1;
+    height: 30vh;
+}
+
+.backgroundimg {
+	background-image: url("../MEDIA/javascript-code.jpg");
+	filter: blur(8px);
+	-webkit-filter: blur(8px);
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.bg-text {
+	background-color: rgb(0,0,0); /*fallback colour*/
+	background-color: argb(0,0,0, 0.4); /*black and allows see-through*/
+	color:white;
+	font-weight: bold;
+	border:3px solid #f1f1f1;
+	position: absolute;
+	top: 25%;
+	left: 50%;
+	z-index: 2;
+	width:80%;
+	padding: 10px;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+/*Bio Section*/
+.bio {
+    grid-area: area-2;
+    min-height: 15vh;
+    background-color: #F1C40F;
+	padding-left: 15px;
+}
+
+.avatar{
+	display: block;
+  	margin-left: auto;
+ 	margin-right: auto;
+ 	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	border: 5px solid black;
+}
+
+.avatar-padding{
+	padding-top: 15px;
+	text-align: center;
+}
+
+/*Technologies Section*/
+.technologies {
+    grid-area: area-3;
+    min-height: 15vh;
+    background-color: #EC7063;
+	padding-left: 15px
+}
+
+.list {
+    padding-top: 10px;
+    padding-left: 20px;
+	padding-bottom: 10px;
+}
+
+.blue-text { 
+	color: blue; 
+}
+
+/*Competencies Section*/
+.competencies {
+    grid-area: area-4;
+    min-height: 15vh;
+    background-color: #DAF7A6;
+}
+
+.box-5 {
+	flex: 4; /*horizontal nav on desktop*/
+	/*Centering the content both vertical and horizontal*/
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column;
+	padding: 10px;
+}
+
+.flip-box {
+	background-color: transparent;
+	width: 300px;
+	height: 200px;
+	perspective: 1000px;
+  }
+  
+.flip-box-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+}
+  
+.flip-box:hover .flip-box-inner {
+	transform: rotateY(180deg);
+	
+}
+  
+ .flip-box-front, .flip-box-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	
+}
+  
+.flip-box-front {
+	background-color: lightblue;
+	color: black;
+}
+  
+.flip-box-back {
+	background-color: lightblue;
+	color: black;
+	transform: rotateY(180deg);
+  	align-items: center;
+  	justify-content: center;
+	text-align: center;
+}
+
+.image {
+	vertical-align: middle;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	border: 5px solid black;
+}
+
+/*Statement Section*/
+.statement {
+    grid-area: area-5;
+    min-height: 15vh;
+    background-color: #FF7F50;
+	padding-left: 15px;
+}
+
+.centertext {
+	text-align: center;
+}
+
+/*my research page*/
+.research-images{
+	 width: 350px;
+	 height: 200px;
+ }
+ 
+/*.research-flip-box-back .p{ //Attempt at fixing words on research page
+	font-size:20vw;			  //Came to conclusion there is too much text.
+}*/
+
+.flex-container-research {
+  /*Centering the content both vertical and horizontal*/
+    display: flex;
+	flex-direction: column;
+    justify-content: space-around;
+	gap: 10px;
+	padding: 10px;
+	flex-wrap: wrap;
+	min-height:50vh;
+	min-width: 100vw;	
+}
+
+.research-CC {
+	background-color: #FBE7A1;
+	width: 380px;
+	height: 200px;
+	flex: 280px;
+	text-align: center;
+	justify-content: center;
+	border: 5px solid #EE9A4D;
+ }
+
+.ccresearch-flip-box-front {
+	background-color: #FBE7A1;
+	color: black;
+}
+
+.ccresearch-flip-box-back {
+	background-color: #FBE7A1;
+	color: black;
+	transform: rotateY(180deg);
+  	align-items: center;
+  	justify-content: center;
+	text-align: center;
+}	
+.ccresearch-flip-box-front, .ccresearch-flip-box-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.research {
+	background-color: #FED8B1;
+	width: 380px;
+	height: 280px;
+	flex: 280px;
+	text-align: center;
+	justify-content: center;
+	border: 5px solid #EE9A4D;
+}
+
+.research-flip-box-front {
+	background-color: #FED8B1;
+	color: black;
+}
+
+.research-flip-box-back {
+	background-color: #FED8B1;
+	color: black;
+	transform: rotateY(180deg);
+  	align-items: center;
+  	justify-content: center;
+	text-align: center;
+}
+
+.research-flip-box-front, .research-flip-box-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.research-flip-box {
+	background-color: transparent;
+	width: 350px;
+	height: 270px;
+	perspective: 1000px;
+}
+  
+.research-flip-box-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+}
+
+.research-flip-box:hover .research-flip-box-inner {
+	transform: rotateY(180deg);
+}
+ 
+/*Footer Area*/
+footer {
+	height: 10vh;
+	background-color: #DAF7A6;
+	text-align: center;
+	/*Centering both vertical and horizontal*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/*Javascript Demo CSS*/
+.abstract {
+	font-style: italic;
+	color: blue;
+	font-size: 1.2em;
+}
+
+.detailed {
+	font-style: normal;
+	color: black;
+	font-size: 1.0em;
+	display: none;
+}
+
+/*-------------------------------------------------*/
+/*RESPONSIVE CSS*/
+/*THUMB RULE: Mobile First
+  Use min-width to detect device screen size.
+  min-width: 768px means that "when viewport is 768px or larger (Tablet or PC), set these styles; 
+  otherwise (Mobile) set above styles"  */
+@media screen and (min-width: 768px) {
+	
+   /*Make Horizontal nav visible*/
+   .horizontal-nav {
+	   display: block;
+	   	background-color: #DAF7A6; 
+		padding: 10px 10px 10px 10px;
+   }
+   
+   .horizontal-nav ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+	}
+
+	.horizontal-nav ul li {
+		display: inline-block;
+		font-family: 'Oswald', sans-serif;
+		font-size: 1.0em;
+	}
+
+	.horizontal-nav ul li a {
+		display: block;
+		color: black;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;	
+	}
+
+	.horizontal-nav ul li:hover:not(.active) {
+		background-color: green;
+	}
+	
+	
+	main {
+		display: grid;
+		grid-template-areas: "area-1 area-1"
+							 "area-2 area-3"
+							 "area-4 area-4"
+							 "area-5 area-5";
+		grid-template-columns: 1fr 1fr;	
+	}
+	
+	.box-5 {
+		flex: 4; /*horizontal nav on desktop*/
+		/*Centering the content both vertical and horizontal*/
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-direction: row;
+		padding: 10px;
+	}
+	
+	.avatar{
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		border: 5px solid black;
+		float: left;
+	}
+
+	.flex-container-research {
+	/*Centering the content both vertical and horizontal*/
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		gap: 25px;
+		padding: 10px;
+		flex-wrap: wrap;
+		min-height:50vh;
+		min-width: 99vw;	
+	}
+
+	.research-images{
+	 width: 550px;
+	 height: 450px;
+	}
+	
+	.research-CC {
+		background-color: #FBE7A1;
+		width: 500px;
+		height: 510px;
+		flex: 500px;
+		text-align: center;
+		justify-content: center;
+		border: 5px solid #EE9A4D;
+	}
+  
+	.research {
+		background-color: #FED8B1;
+		width: 500px;
+		height: 510px;
+		flex: 500px;
+		text-align: center;
+		justify-content: center;
+		border: 5px solid #EE9A4D;
+	}
+	
+	.research-flip-box {
+		background-color: transparent;
+		width: 600px;
+		height: 500px;
+		perspective: 1000px;
+	}
+}
